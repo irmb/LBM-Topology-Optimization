@@ -10,7 +10,7 @@ authors:
   - family-names: Liu
     given-names: Zhenyu
 title: "LBM Topology Optimization"
-version: 0.1.0
+version: 1.0.0
 license: GPL-3.0-or-later
 repository-code: "https://git.rz.tu-bs.de/irmb/lbm-topology-optimization"
 date-released: "2023-12-11"
