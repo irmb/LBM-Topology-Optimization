@@ -17,6 +17,21 @@ Alternatively, the source code can be downloaded as a zip file from the [latest 
 
 
 ## How to cite
+The software is published on [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10354082.svg)](https://doi.org/10.5281/zenodo.10354082) and can be cited:
+```
+@software{software,
+  author       = {Geier, Martin and
+                  Liu, Zhenyu},
+  title        = {LBM Topology Optimization},
+  month        = dec,
+  year         = 2023,
+  publisher    = {Zenodo},
+  version      = {1.0.0},
+  doi          = {10.5281/zenodo.10354082},
+  url          = {https://doi.org/10.5281/zenodo.10354082}
+}
+```
+
 A detailed description is found in: **Cellula automaton based fluidic topology optimization**, M. Geier, Z. Liu, A. Greiner and J.G. Korvink in "Recent Developments in Structural Engineering, Mechanics and Computation", 2007 Millpress Rotterdam ISBN 9789059660540.
 
 ```
