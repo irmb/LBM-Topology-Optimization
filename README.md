@@ -10,6 +10,10 @@ SPDX-License-Identifier: CC-BY-4.0
 
 This Java applet imlements a heuristic topology optimization strategy for the minimzation of dissipation in fluids. The code was originally written to run in a webbrowser and has been slightly modified to run as a stand alone. It has otherwise not been updated size 2007 and is no longer under active development.
 
+## Download
+The continuous integration pipeline builds the code and creates an executable Jar for each commit on the `main` branch. The latest jar can be downloaded [here](https://git.rz.tu-bs.de/api/v4/projects/4898/jobs/artifacts/main/download?job=compile_java).
+
+Alternatively, the source code can be downloaded as a zip file from the [latest release](https://git.rz.tu-bs.de/irmb/legacy-lbm-topology-optimization/-/releases).
 
 
 ## How to cite
