@@ -49,3 +49,5 @@ A detailed description is found in: **Cellula automaton based fluidic topology o
 ## Acknowledgements
 Grateful for the assistance provided by Peng Liu from Changchun, China, in transforming the JApplet application into a desktop application by inheriting from the JFrame class.
 The specific tasks included performing the initialization work of the original JApplet framework in the new constructor and replacing the original browser status bar with a JLabel.
+
+Thanks to Soeren Peters, who implemented the Continuous Integration pipeline, made the project REUSE compliant, and managed the software publication to Zenodo.
