@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Geier
+    given-names: Martin
+    orcid: https://orcid.org/0000-0002-8367-9412
+  - family-names: Liu
+    given-names: Zhenyu
+title: "LBM Topology Optimization"
+version: 0.1.0
+license: GPL-3.0-or-later
+repository-code: "https://git.rz.tu-bs.de/irmb/lbm-topology-optimization"
+date-released: "2023-12-11"
