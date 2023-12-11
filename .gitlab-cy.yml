@@ -1,0 +1,17 @@
+stages:
+  - build
+
+
+compile_java:
+  stage: build
+
+  image: openjdk:22-slim-bullseye
+
+  script:
+    - javac -d ./build TopologyApp.java
+    - cd build
+    - jar cfe LBMTopologyOptimization.jar TopologyApp . 
+
+  artifacts:
+    paths:
+      - build/*.jar
