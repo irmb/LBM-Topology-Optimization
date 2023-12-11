@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-4.0
 # Legacy LBM Topology Optimization
 [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
  [![pipeline status](https://git.rz.tu-bs.de/irmb/legacy-lbm-topology-optimization/badges/main/pipeline.svg)](https://git.rz.tu-bs.de/irmb/legacy-lbm-topology-optimization/-/commits/main)
- [![Latest Release](https://git.rz.tu-bs.de/irmb/legacy-lbm-topology-optimization/-/badges/release.svg)](https://git.rz.tu-bs.de/irmb/legacy-lbm-topology-optimization/-/releases)
+ [![Latest Release](https://git.rz.tu-bs.de/irmb/legacy-lbm-topology-optimization/-/badges/release.svg)](https://git.rz.tu-bs.de/irmb/legacy-lbm-topology-optimization/-/releases) [![REUSE status](https://api.reuse.software/badge/git.rz.tu-bs.de/irmb/legacy-lbm-topology-optimization)](https://api.reuse.software/info/git.rz.tu-bs.de/irmb/legacy-lbm-topology-optimization)
 
 
 This Java applet imlements a heuristic topology optimization strategy for the minimzation of dissipation in fluids. The code was originally written to run in a webbrowser and has been slightly modified to run as a stand alone. It has otherwise not been updated size 2007 and is no longer under active development.
