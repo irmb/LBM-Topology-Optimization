@@ -3,6 +3,7 @@
 
 stages:
   - build
+  - lint
 
 
 compile_java:
@@ -20,8 +21,11 @@ compile_java:
       - build/*.jar
 
 reuse:
+  stage: lint
+
   image:
     name: fsfe/reuse:latest
     entrypoint: [""]
+
   script:
     - reuse lint
