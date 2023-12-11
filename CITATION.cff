@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2023 Martin Geier <mailto:geier(at)irmb.tu-bs.de>
+# SPDX-License-Identifier: CC-BY-4.0
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
