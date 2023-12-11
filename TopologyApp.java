@@ -1,10 +1,14 @@
+/*
+ * SPDX-FileCopyrightText: 2023 Martin Geier <mailto:geier(at)irmb.tu-bs.de>
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.StringTokenizer;
-import javax.swing.BoxLayout;
 public class TopologyApp extends JFrame {
     // Assuming you have a SolverThread class inside your applet
     private SolverThread solver;
@@ -90,44 +94,46 @@ public class TopologyApp extends JFrame {
         {
             obom=0;
             q=0;
-//            String x=getParameter("x");
-//            String y=getParameter("y");
+            // String x=getParameter("x");
+            // String y=getParameter("y");
             String x="200";
             String y="100";
 
             if (x!=null){xmax=Integer.parseInt(x);}
             if (y!=null){ymax=Integer.parseInt(y);}
         }
-        //optOm=0;
-        //optA=0;
-        optS=0;
-        //optPow=1;
-        //optM=1;
-        optSc=0;
-        optExp=0.0f;
-        //isr=new InputStreamReader(System.in);
-        //input=new BufferedReader(isr);
-        //io=new IOThread();
+        // optOm=0;
+        // optA=0;
+        optS = 0;
+        // optPow=1;
+        // optM=1;
+        optSc = 0;
+        optExp = 0.0f;
+        // isr=new InputStreamReader(System.in);
+        // input=new BufferedReader(isr);
+        // io=new IOThread();
 
-        imtek=new JLabel("<html><center><h1>www.imtek.de</h1></center></html>");//<img src='http://www.imtek.de/~geier/icons/imtekLoop.gif' alt='www.imtek.de'></html>");//(iconImtek);
-        vis=new JSlider(JSlider.HORIZONTAL,10,smax/2,(int)(smax/3.*(1./om-0.5)));// anf war 100
-        pres=new JSlider(JSlider.HORIZONTAL,-1000,1000,0);
-        step=new JSlider(JSlider.HORIZONTAL,1,200,sz);
-        scaler=new JSlider(JSlider.HORIZONTAL,1,300,(int)vsc);
-        control=new JPanel();
-        subcontrol=new JPanel();
-        butControl=new JPanel();
-        dispControl=new JPanel();
-        visShow=new JLabel("kinematic viscosity="+Float.toString(1.f/3.f*(1.f/om-0.5f)),JLabel.CENTER);
-        drawControl=new ButtonGroup();
-        drawBut=new JRadioButton("draw");
-        ereaseBut=new JRadioButton("erase");
-        probBut=new JRadioButton("probe");
-        voidBut=new JRadioButton("void");
-        colorToc=new JCheckBox("color");
-        clock=new JCheckBox("clock");
+        imtek = new JLabel("<html><center><h1>www.imtek.de</h1></center></html>");// <img
+                                                                                  // src='http://www.imtek.de/~geier/icons/imtekLoop.gif'
+                                                                                  // alt='www.imtek.de'></html>");//(iconImtek);
+        vis = new JSlider(JSlider.HORIZONTAL, 10, smax / 2, (int) (smax / 3. * (1. / om - 0.5)));
+        pres = new JSlider(JSlider.HORIZONTAL, -1000, 1000, 0);
+        step = new JSlider(JSlider.HORIZONTAL, 1, 200, sz);
+        scaler = new JSlider(JSlider.HORIZONTAL, 1, 300, (int) vsc);
+        control = new JPanel();
+        subcontrol = new JPanel();
+        butControl = new JPanel();
+        dispControl = new JPanel();
+        visShow = new JLabel("kinematic viscosity=" + Float.toString(1.f / 3.f * (1.f / om - 0.5f)), JLabel.CENTER);
+        drawControl = new ButtonGroup();
+        drawBut = new JRadioButton("draw");
+        ereaseBut = new JRadioButton("erase");
+        probBut = new JRadioButton("probe");
+        voidBut = new JRadioButton("void");
+        colorToc = new JCheckBox("color");
+        clock = new JCheckBox("clock");
 
-        display=new Display();
+        display = new Display();
 
         optControl=new JPanel();
         optOmS=new JSlider(JSlider.VERTICAL,0,500,0);
@@ -313,7 +319,7 @@ public class TopologyApp extends JFrame {
             //start=System.currentTimeMillis();
         }
 		/*
-		//for Zhenyu
+		// for Zhenyu
 		for (int xi=1; xi<xmax;xi++){dat[xi][0][9]=1;dat[xi][ymax-1][9]=1;}
 
 		int length=(int)(xmax*3.5f/12.5f);
@@ -327,16 +333,16 @@ public class TopologyApp extends JFrame {
 				dat[xmax-xi][yi][9]=1;
 				}
 			}
-		//!Zhenyu
+		// !Zhenyu
 		*/
-        //for (int i=5; i<100; i++){for(int j=5; j<20; j++){dat[i][j][9]=10;}}
+        // for (int i=5; i<100; i++){for(int j=5; j<20; j++){dat[i][j][9]=10;}}
         /*SolverThread*/
         {
-            //Boundary Conditions
-//            String BC= " 25 23 c 25 27 bs";
-            //因为网页版把复制BC这里注释了，所以我这里直接赋值成null
-            String BC= null;
-            if (BC!=null){
+            // Boundary Conditions
+            // String BC= " 25 23 c 25 27 bs";
+            //  TODO: https://git.rz.tu-bs.de/irmb/legacy-lbm-topology-optimization/-/issues/1
+            String BC = null;
+            if (BC != null) {
                 StringTokenizer st = new StringTokenizer(BC);
                 int n=st.countTokens()/3;
                 int x1=0;
@@ -368,37 +374,32 @@ public class TopologyApp extends JFrame {
             }
         }
 
-        // 创建状态栏标签，并设置其最小和首选宽度，使其可以靠左对齐
-        statusLabel = new JLabel("状态信息");
-        statusLabel.setAlignmentX(Component.LEFT_ALIGNMENT); // 靠左对齐
+        statusLabel = new JLabel("Status information");
+        statusLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         statusLabel.setBorder(BorderFactory.createLoweredBevelBorder());
 
-        // 创建一个面板，用于放置状态标签，使用 BoxLayout 使标签靠左对齐
         JPanel statusPanel = new JPanel();
         statusPanel.setLayout(new BoxLayout(statusPanel, BoxLayout.X_AXIS));
         statusPanel.add(statusLabel);
-        statusPanel.add(Box.createHorizontalGlue()); // 这将推动标签靠左
+        statusPanel.add(Box.createHorizontalGlue());
 
-        // 创建包含所有组件的南部面板，使用 BoxLayout 使它们垂直排列
         JPanel southPanel = new JPanel();
         southPanel.setLayout(new BoxLayout(southPanel, BoxLayout.Y_AXIS));
 
-        southPanel.add(control); // 添加按钮
+        southPanel.add(control);
         southPanel.add(Box.createVerticalStrut(5)); // 添加间隔
-        southPanel.add(statusPanel); // 添加包含状态标签的面板
+        southPanel.add(statusPanel);
 
-        //	optControl.add(BorderLayout.EAST,optExpS);
+        // optControl.add(BorderLayout.EAST,optExpS);
         cp.add(BorderLayout.EAST,optControl);
-//        cp.add(BorderLayout.SOUTH,southPanel);
+        // cp.add(BorderLayout.SOUTH,southPanel);
         cp.add(BorderLayout.CENTER,display);
-        // 将面板添加到内容面板的南部
         cp.add(southPanel, BorderLayout.SOUTH);
     }
-    // 如果需要，可以添加窗口事件监听器处理关闭操作
-    private void setUpWindowListeners() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // 其他窗口事件监听器...
-    }
+
+    // private void setUpWindowListeners() {
+    //     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    // }
 
     public class Display extends JPanel implements MouseListener, MouseMotionListener {
         public Display(){this.addMouseListener(this);
@@ -552,11 +553,9 @@ public class TopologyApp extends JFrame {
 
     };
 
-    // SolverThread类的定义...
     public class SolverThread extends Thread{
         SolverThread(){start();}
         public void run(){
-            //原来的代码
 //            while(true){
 //                update(sz);
 //                display.repaint();
@@ -676,7 +675,7 @@ public class TopologyApp extends JFrame {
                                         //alpha[xi][yi]+=(0.001f-pp)*0.00001f;
                                         //alpha[xi][yi]= (alpha[xi][yi]<1e-4f) ? 1e-4f : ((alpha[xi][yi]>0.9999f) ? 0.9999f : alpha[xi][yi]);
 
-                                        double pp;//=vx*vx+vy*vy;
+                                        // double pp;//=vx*vx+vy*vy;
                                         //double ppx=(vx*(alpha[((xi>1) ? xi-1 : xmax-1)][(yi+1)%ymax]+alpha[xi][(yi+1)%ymax]+alpha[(xi+1)%xmax][(yi+1)%ymax]-alpha[((xi>1) ? xi-1 : xmax-1)][((yi>1) ? yi-1 : ymax-1)]-alpha[xi][((yi>1) ? yi-1 : ymax-1)]-alpha[(xi+1)%xmax][((yi>1) ? yi-1 : ymax-1)]));
                                         //double ppy=vy*(alpha[(xi+1)%xmax][((yi>1) ? yi-1 : ymax-1)]+alpha[(xi+1)%xmax][(yi+1)%ymax]-alpha[((xi>1) ? xi-1 : xmax-1)][((yi>1) ? yi-1 : ymax-1)]-alpha[((xi>1) ? xi-1 : xmax-1)][yi]-alpha[((xi>1) ? xi-1 : xmax-1)][(yi+1)%ymax]);
                                         //double pp=ppx*ppx+ppy*ppy;
@@ -883,8 +882,8 @@ public class TopologyApp extends JFrame {
 			}*/
         public double updateGeo(double app_o,double qa){
             //double app;
-            double q=0;
-            double dq=0;
+            double q = 0;
+            double dq = 0;
             //--logistic controll
 		/*
 		{
@@ -1049,18 +1048,16 @@ public class TopologyApp extends JFrame {
         }
     };
 
-    // 用来更新状态栏信息的方法
     public void showStatus(String message) {
         statusLabel.setText(message);
     }
 
     public static void main(String[] args) {
-        // 在事件调度线程中运行界面创建，以确保线程安全
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 TopologyApp app = new TopologyApp();
-                app.pack(); // 根据组件大小调整窗口大小
-                app.setVisible(true); // 显示窗口
+                app.pack();
+                app.setVisible(true);
             }
         });
     }

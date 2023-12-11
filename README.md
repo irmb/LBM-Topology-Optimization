@@ -1,3 +1,7 @@
+<!--
+SPDX-FileCopyrightText: 2023 Martin Geier <mailto:geier(at)irmb.tu-bs.de>
+SPDX-License-Identifier: CC-BY-4.0
+-->
 # Legacy LBM Topology Optimization
 
 This Java applet imlements a heuristic topology optimization strategy for the minimzation of dissipation in fluids. The code was originally written to run in a webbrowser and has been slightly modified to run as a stand alone. It has otherwise not been updated size 2007 and is no longer under active development.

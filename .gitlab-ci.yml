@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2023 Martin Geier <mailto:geier(at)irmb.tu-bs.de>
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 stages:
   - build
 
@@ -15,3 +18,10 @@ compile_java:
   artifacts:
     paths:
       - build/*.jar
+
+reuse:
+  image:
+    name: fsfe/reuse:latest
+    entrypoint: [""]
+  script:
+    - reuse lint
