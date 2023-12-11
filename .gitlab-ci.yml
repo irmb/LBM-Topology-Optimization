@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2023 Martin Geier <mailto:geier(at)irmb.tu-bs.de>
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+stages:
+  - build
+  - lint
+
+
+compile_java:
+  stage: build
+
+  image: openjdk:22-slim-bullseye
+
+  script:
+    - javac -d ./build TopologyApp.java
+    - cd build
+    - jar cfe LBMTopologyOptimization.jar TopologyApp . 
+
+  artifacts:
+    paths:
+      - build/*.jar
+
+reuse:
+  stage: lint
+
+  image:
+    name: fsfe/reuse:latest
+    entrypoint: [""]
+
+  script:
+    - reuse lint
